@@ -1,9 +1,13 @@
 package com.euroTech.step_definitions;
 
+import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.TakesScreenshot;
 
 import java.time.Duration;
 
@@ -17,7 +21,12 @@ public class Hooks {
        // System.out.println("\t Comes from before method");
     }
     @After (order = 0)
-    public void tearDown(){
+    public void tearDown(Scenario scenario){
+        if (scenario.isFailed()){
+           final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
+           scenario.attach(screenshot,"image/png","screenshot");
+        }
+        BrowserUtils.waitFor(2);
         Driver.closeDriver();
        // System.out.println("\t Comes from after method");
     }

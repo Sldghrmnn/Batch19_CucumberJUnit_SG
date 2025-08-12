@@ -1,31 +1,36 @@
 package com.euroTech.pages;
 
+
 import com.euroTech.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+
+import java.util.List;
 
 public class LoginPage extends BasePage{
 
     @FindBy(id="email")
-    public static WebElement emailBox;
+    private WebElement emailBox;
 
-    @FindBy(id="yourPassword")
-    public WebElement passwordBox;
+    @FindBy (id = "yourPassword")
+    private WebElement passwordBox;
 
-    @FindBy(xpath = "//button")
-    public WebElement loginBtn;
+    @FindBy (xpath = "//button")
+    private WebElement loginBtn;
 
-    public void login(){
-        emailBox.sendKeys(ConfigurationReader.get("userEmail"));
+
+    public void login() {
+        emailBox.sendKeys(ConfigurationReader.get("email"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
         loginBtn.click();
     }
-    public void login(String userEmail,String password){
-        emailBox.sendKeys(userEmail);
+
+    public void login(String email, String password) {
+        emailBox.sendKeys(email);
         passwordBox.sendKeys(password);
         loginBtn.click();
     }
-
-
 
 }
