@@ -2,6 +2,9 @@ package com.euroTech.pages;
 
 
 import com.euroTech.utilities.ConfigurationReader;
+import com.euroTech.utilities.Driver;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -31,6 +34,15 @@ public class LoginPage extends BasePage{
         emailBox.sendKeys(email);
         passwordBox.sendKeys(password);
         loginBtn.click();
+    }
+
+    public String getWarningMessage(String messageText){
+        return Driver.get().findElement(By.xpath("//div[contains(text(),'"+messageText+"')]")).getText();
+    }
+
+    public void verifyWarningMessage(String expectedMessage){
+        Assert.assertEquals(expectedMessage,getWarningMessage(expectedMessage));
+
     }
 
 }

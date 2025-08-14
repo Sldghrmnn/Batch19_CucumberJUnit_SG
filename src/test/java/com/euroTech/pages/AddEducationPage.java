@@ -3,6 +3,9 @@ package com.euroTech.pages;
 
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -41,8 +44,19 @@ public class AddEducationPage extends BasePage{
         descriptionBox.sendKeys(desc);
         addEducationBtn.click();
     }
+
     public List<String> getAddEducationFormLabelsTexts(){
         BrowserUtils.waitForVisibility(addEducationBtn,10);
         return BrowserUtils.getElementsText(educationFormLabels);
     }
+
+    public void verifyAddEducationFormLabels(List<String> expectedLabels){
+        Assert.assertEquals(expectedLabels,getAddEducationFormLabelsTexts());
+    }
+
+    public void verifyAddEducationPageIsDisplayed() {
+        Assert.assertTrue(BrowserUtils.waitForVisibility(addEducationBtn,10).isDisplayed());
+    }
+
+
 }

@@ -116,6 +116,13 @@ public class Login_StepDefs {
        dashboardPage.verifyUsername(credentialsMap.get("user_name"));
     }
 
+    @Then("The user should be able to see warning {string}")
+    public void the_user_should_be_able_to_see_warning(String warningMessage) {
+
+
+    }
+
+
 
 
 
