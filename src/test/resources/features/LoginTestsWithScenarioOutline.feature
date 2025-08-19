@@ -1,6 +1,5 @@
 Feature: Login tests with scenario outline
 
-
   Scenario Outline: Pasitive Login Tests  with <username>
     Given The user is on the login page
     When The user logins with "<email>" and "<password>"

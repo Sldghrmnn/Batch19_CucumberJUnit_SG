@@ -23,6 +23,9 @@ public class LoginPage extends BasePage{
     @FindBy (xpath = "//button")
     private WebElement loginBtn;
 
+    @FindBy(xpath = "//span[text()='Login']")
+    private WebElement loginLink;
+
 
     public void login() {
         emailBox.sendKeys(ConfigurationReader.get("email"));
@@ -45,4 +48,7 @@ public class LoginPage extends BasePage{
 
     }
 
+    public WebElement getLoginLink() {
+        return loginLink;
+    }
 }
