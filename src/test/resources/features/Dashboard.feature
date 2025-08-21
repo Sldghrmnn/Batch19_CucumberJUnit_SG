@@ -1,7 +1,7 @@
 @regression
 Feature: Dashboard Tests
 
-  @smoke
+  @smoke @paralel
   Scenario: Developers Page Test
     Given The user is on the login page
     When The user enters Zelda's credentials

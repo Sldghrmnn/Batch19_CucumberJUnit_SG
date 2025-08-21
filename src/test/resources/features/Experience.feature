@@ -1,5 +1,5 @@
 Feature: Experience Tests
-
+@paralel
   Scenario: Add Experience Form Labels Check
     Given The user is on the login page
     When The user logins with "sld@gmail.com" and "Almanya2018!"

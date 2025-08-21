@@ -1,6 +1,6 @@
 Feature: Education Tests
 
-
+@paralel
   Scenario: Add Education Form Labels Check
     Given The user is on the login page
     When The user logins with "sld@gmail.com" and "Almanya2018!"
@@ -31,7 +31,7 @@ Feature: Education Tests
     Examples:
       | email                   | password     | username | schoolName | degree   | study             | fromDate | toDate   | desc          |
       | sld@gmail.com           | Almanya2018! | Zelda    | METU       | Bachelor | Public Finance    | 11112011 | 12122012 | Hard Program  |
-      | rosa@test.com           | Test123456   | Rosa34   | Fenerbahce | Master   | Architecen        | 11112010 | 12122014 | Gut Program   |
+      | rosa@test.com           | Test123456   | Rosa     | Fenerbahce | Master   | Architecen        | 11112010 | 12122014 | Gut Program   |
       | Ramanzi@test.com        | Test123456   | Mansimmo | ITU        | PG       | Medicine          | 11112009 | 12122012 | Hard Program  |
       | mike@gmail.com          | mike1234     | mike     | Bilkent    | Doctor   | Software Engineer | 11112013 | 10122012 | Sweet Program |
       | leeroyjenkins@email.com | 1234.Asdf    | Leeroy   | Ankara     | Art      | Teacher           | 11112011 | 12122012 | Hard Program  |

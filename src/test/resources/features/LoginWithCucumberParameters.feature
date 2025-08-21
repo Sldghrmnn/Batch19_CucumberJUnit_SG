@@ -50,7 +50,7 @@ Feature: Login Test with Cucumber Parameters
       | Test123456    |
       | Rosa          |
 
-
+@paralel
   Scenario:  Login with credentials map rosa
     When The user login and verify with following credentials map
       | user_email | rosa@test.com |
